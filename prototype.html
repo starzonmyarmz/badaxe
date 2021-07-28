@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prototype</title>
+  </head>
+  <body>
+    <button type="button" id="request">Request Device Motion</button>
+
+    <div id="out">out</div>
+
+    <script>
+      if ( location.protocol != "https:" ) {
+        location.href = "https:" + window.location.href.substring( window.location.protocol.length );
+      }
+
+      function permission () {
+        if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
+          // (optional) Do something before API request prompt.
+          DeviceMotionEvent.requestPermission()
+            .then( response => {
+              // (optional) Do something after API prompt dismissed.
+              if ( response == "granted" ) {
+                window.addEventListener( "devicemotion", (e) => {
+                  document.getElementById('out').innerHTML = e
+                  console.log(e)
+                })
+              }
+            })
+            .catch( console.error )
+        } else {
+          alert( "DeviceMotionEvent is not defined" );
+        }
+      }
+
+      const btn = document.getElementById( "request" );
+      btn.addEventListener( "click", permission );
+    </script>
+  </body>
+</html>
