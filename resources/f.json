@@ -1,0 +1,48 @@
+{
+	"$baseURI": "https://yal.cc/r/20/pixelfont/",
+	"$version": "1.0",
+	"in-glyphs": [
+		"abcdef",
+		"ghijkl",
+		"mnopqr",
+		"stuvwx",
+		"yz1234",
+		"567890",
+		".!',"
+	],
+	"glyph-color": "black",
+	"in-kerning": [
+		""
+	],
+	"glyph-width": 9,
+	"glyph-height": 9,
+	"glyph-ofs-x": 1,
+	"glyph-ofs-y": 1,
+	"glyph-sep-x": 1,
+	"glyph-sep-y": 1,
+	"glyph-base-x": 0,
+	"glyph-baseline": 9,
+	"glyph-spacing": 1,
+	"font-is-mono": false,
+	"font-em-square": 1024,
+	"font-line-gap": 0,
+	"font-ascend": 768,
+	"font-descend": -512,
+	"font-px-size": 128,
+	"font-name": "f",
+	"font-author": "",
+	"font-copy": "",
+	"font-version": "",
+	"font-desc": "",
+	"font-license": "",
+	"font-license-url": "",
+	"font-sample-text": "",
+	"font-preview-text": [
+		"hello my name.!'",
+		"is daniel marino, and",
+		"im a pepper",
+		"",
+		"",
+		"1234567890"
+	]
+}

@@ -1,14 +1,35 @@
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'f';
+  src: url('/resources/f.ttf');
+  font-weight: normal;
+  font-style: normal;
 }
 
-body {
-  background-image: url(test.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+* {
+  box-sizing: border-box;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-crisp-edges;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  height: 100vh
+}
+
+body {
+  background-image: url(test.png);
+  background-image: url(164x312.png);
+  /* background-image: url(324x648.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-size: 16px;
+  font-family: f;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+#a {
+  background: #000;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  height: 100%;
 }
