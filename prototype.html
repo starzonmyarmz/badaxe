@@ -2,40 +2,66 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Graphic Test</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <button type="button" id="request">Request Device Motion</button>
+    <div id="errors" hidden>
+      this device is unsupported.
+      this browser is unsupported.
+      you must grant permissions for the game to work.
+    </div>
 
-    <div id="out">out</div>
+    <div id="title">
+      <button class="btn-lg" data-play>play</button>
+      <button class="btn-lg" data-toggle-menu>menu</button>
+      <div id="high">high score <br> 1,240</div>
+    </div>
+
+    <div id="game" hidden>
+      <button data-toggle-menu>menu</button>
+      <div>1,234</div>
+      <div>10mph</div>
+      <div>x x x</div>
+    </div>
+
+    <div id="menu" hidden>
+      <button class="btn-lg">
+        <div id="bit"></div>
+        sound fx
+      </button>
+      <button class="btn-lg" data-title>title</button>
+      <button class="btn-lg">share</button>
+      <button class="btn-lg">reset education</button>
+      <button class="btn-lg">reset high score</button>
+      <button class="btn-lg" data-toggle-menu>back</button>
+    </div>
+
+    <div id="splash">
+      <b>bran dunino games</b>
+    </div>
 
     <script>
-      if ( location.protocol != "https:" ) {
-        location.href = "https:" + window.location.href.substring( window.location.protocol.length );
-      }
-
-      function permission () {
-        if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
-          // (optional) Do something before API request prompt.
-          DeviceMotionEvent.requestPermission()
-            .then( response => {
-              // (optional) Do something after API prompt dismissed.
-              if ( response == "granted" ) {
-                window.addEventListener( "devicemotion", (e) => {
-                  document.getElementById('out').innerHTML = e
-                  console.log(e)
-                })
-              }
-            })
-            .catch( console.error )
-        } else {
-          alert( "DeviceMotionEvent is not defined" );
-        }
-      }
-
-      const btn = document.getElementById( "request" );
-      btn.addEventListener( "click", permission );
+      document.addEventListener('click', ({target}) => {
+        if (!target.closest('#splash')) return
+        target.closest('#splash').hidden = true
+      })
+      document.addEventListener('click', ({target}) => {
+        if (!target.closest('[data-toggle-menu]')) return
+        document.getElementById('menu').hidden = !document.getElementById('menu').hidden
+      })
+      document.addEventListener('click', ({target}) => {
+        if (!target.closest('[data-play]')) return
+        document.getElementById('title').hidden = !document.getElementById('title').hidden
+        document.getElementById('game').hidden = !document.getElementById('game').hidden
+      })
+      document.addEventListener('click', ({target}) => {
+        if (!target.closest('[data-title]')) return
+        document.getElementById('title').hidden = false
+        document.getElementById('game').hidden = true
+        document.getElementById('menu').hidden = !document.getElementById('menu').hidden
+      })
     </script>
   </body>
 </html>

@@ -14,8 +14,8 @@
 }
 
 body {
-  background-image: url(test.png);
-  background-image: url(164x312.png);
+  /* background-image: url(test.png); */
+  /* background-image: url(164x312.png); */
   /* background-image: url(324x648.png); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,10 +26,76 @@ body {
   margin: 0;
 }
 
-#a {
+canvas {
+  background: gray;
+  inset: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#splash {
   background: #000;
   color: #fff;
   display: grid;
+  inset: 0;
   place-items: center;
+  position: fixed;
   height: 100%;
+  z-index: 9;
+}
+
+#title {
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: fixed;
+  height: 100%;
+  text-align: center
+}
+
+#game {
+  background-image: url(Axe_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  inset: 0;
+  padding: 16px;
+  position: fixed;
+  height: 100%;
+  grid-template-columns: repeat(2, min-content);
+  place-content: space-between;
+  grid-template-rows: repeat(2, min-content);
+}
+
+#menu {
+  background: #000;
+  color: #fff;
+  display: grid;
+  inset: 0;
+  place-items: center;
+  position: fixed;
+  height: 100%;
+  z-index: 9;
+  text-align: center;
+}
+
+#menu button {
+}
+
+.btn-lg {
+  background: #000;
+  border: 0;
+  color: #fff;
+  font-family: f;
+  font-size: inherit;
+  height: 48px;
+  padding: 0;
+  margin-bottom: 8px;
+  width: 80vw;
+}
+
+[hidden] {
+  display: none !important;
 }
