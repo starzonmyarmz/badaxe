@@ -32,7 +32,7 @@
         sound fx
       </button>
       <button class="btn-lg" data-title>title</button>
-      <button class="btn-lg">share</button>
+      <button class="btn-lg" data-share hidden>share</button>
       <button class="btn-lg">reset education</button>
       <button class="btn-lg">reset high score</button>
       <button class="btn-lg" data-toggle-menu>back</button>
@@ -47,21 +47,36 @@
         if (!target.closest('#splash')) return
         target.closest('#splash').hidden = true
       })
+
       document.addEventListener('click', ({target}) => {
         if (!target.closest('[data-toggle-menu]')) return
         document.getElementById('menu').hidden = !document.getElementById('menu').hidden
       })
+
       document.addEventListener('click', ({target}) => {
         if (!target.closest('[data-play]')) return
         document.getElementById('title').hidden = !document.getElementById('title').hidden
         document.getElementById('game').hidden = !document.getElementById('game').hidden
       })
+
       document.addEventListener('click', ({target}) => {
         if (!target.closest('[data-title]')) return
         document.getElementById('title').hidden = false
         document.getElementById('game').hidden = true
         document.getElementById('menu').hidden = !document.getElementById('menu').hidden
       })
+
+      if (navigator.canShare) {
+        const btn = document.querySelector('[data-share]')
+        btn.hidden = false
+        btn.addEventListener('click', async () => {
+            await navigator.share({
+              title: document.querySelector('title'),
+              text: 'play our game',
+              url: 'https://iamdanielmarino.com'
+            })
+        })
+      }
     </script>
   </body>
 </html>
