@@ -1,0 +1,12 @@
+{
+  "name": "js13k-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "serve": "ngrok http file:///Users/danielmarino/Code/js13k-2021"
+  },
+  "repository": "git@github.com:starzonmyarmz/js13k-2021.git",
+  "author": "Daniel Marino <starzonmyarmz@gmail.com>",
+  "contributors": ["Brad Dunbar <dunbarb2@gmail.com>"],
+  "license": "MIT"
+}
