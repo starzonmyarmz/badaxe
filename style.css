@@ -57,7 +57,7 @@ canvas {
 }
 
 #game {
-  background-image: url(Axe_1.png);
+  background-image: url(badaxe.png);
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
