@@ -1,12 +1,14 @@
 {
-  "name": "js13k-2021",
+  "name": "badaxe",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "serve": "ngrok http file:///Users/danielmarino/Code/js13k-2021"
-  },
-  "repository": "git@github.com:starzonmyarmz/js13k-2021.git",
+  "main": "sketch.js",
+  "scripts": {},
+  "repository": "git@github.com:starzonmyarmz/badaxe.git",
   "author": "Daniel Marino <starzonmyarmz@gmail.com>",
-  "contributors": ["Brad Dunbar <dunbarb2@gmail.com>"],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "p5": "^1.9.0",
+    "p5play": "^3.18.11",
+    "planck": "^1.0.0"
+  }
 }
